@@ -2,6 +2,7 @@ package com.vogella.spring.first.di.config;
 
 import java.util.Date;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -16,8 +17,15 @@ public class Config {
 	}
 	
 	@Bean
+	@Qualifier("summary")
 	public String getSummary() {
 		return "Spring DI";
+	}
+	
+	@Bean
+	@Qualifier("description")
+	public String getDescription() {
+		return "Dependency in Spring is a powerful feature for inversion of control.";
 	}
 	
 	@Bean
